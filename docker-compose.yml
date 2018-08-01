@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  wolf.core.web:
+    image: ${DOCKER_REGISTRY}wolfcoreweb
+    build:
+      context: .
+      dockerfile: Wolf.Core.Web/Dockerfile
