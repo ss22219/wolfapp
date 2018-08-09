@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Wolf.Core.Web
 {
-    public class Program
+    public class ProgramC:\Users\gool\source\repos\Wolf.Core.Web\docker-compose.override.yml
     {
         public static void Main(string[] args)
         {
@@ -19,6 +19,7 @@ namespace Wolf.Core.Web
 
         public static IWebHost BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+                .UseKestrel()
                 .UseStartup<Startup>()
                 .Build();
     }

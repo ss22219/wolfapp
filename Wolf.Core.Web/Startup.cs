@@ -37,9 +37,16 @@ namespace Wolf.Core.Web
                 app.UseExceptionHandler("/Error");
             }
 
-            app.UseStaticFiles();
+            //app.UseStaticFiles();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action}/{id?}",
+                    defaults: new { controller = "Home", action = "Index"}
+               );
+            });
         }
     }
 }
