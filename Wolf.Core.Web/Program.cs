@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Wolf.Core.Web
 {
-    public class ProgramC:\Users\gool\source\repos\Wolf.Core.Web\docker-compose.override.yml
+    public class Program
     {
         public static void Main(string[] args)
         {
