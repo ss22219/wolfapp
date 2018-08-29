@@ -25,13 +25,12 @@ namespace Wolf.Core.Web.Controllers
             _messageBus = messageBus;
         }
 
-        public ActionResult Index(int count = 1)
+        public ActionResult Index(int quantity = 1)
         {
             Stopwatch stopwatch = new Stopwatch();
             stopwatch.Start();
-            for (int i = 0; i < count; i++)
+            for (int i = 0; i < quantity; i++)
             {
-
                 _messageBus.PublishEvent(new TestEvent
                 {
                     Id = Guid.NewGuid(),

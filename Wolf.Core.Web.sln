@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wolf.Core.Web", "Wolf.Core.Web\Wolf.Core.Web.csproj", "{9CB7D9AB-D7FC-454C-98EE-52C830ABEFE0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wolf.Core.Web", "Wolf.Core.Web\Wolf.Core.Web.csproj", "{9CB7D9AB-D7FC-454C-98EE-52C830ABEFE0}"
 EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{F9105B4C-ED17-4A15-9E29-6D11D3C593D2}"
 EndProject
