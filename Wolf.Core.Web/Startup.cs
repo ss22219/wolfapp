@@ -42,7 +42,7 @@ namespace Wolf.Core.Web
         }
 
         // 通过ci自动创建ServiceRunner
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ServiceRunner runner)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApplicationLifetime applicationLifetime, ServiceRunner runner)
         {
             if (env.IsDevelopment())
             {
@@ -61,7 +61,7 @@ namespace Wolf.Core.Web
                 routes.MapRoute(
                     name: "default",
                     template: "{controller}/{action}/{id?}",
-                    defaults: new { controller = "Home", action = "Index"}
+                    defaults: new { controller = "Home", action = "Index" }
                );
             });
 

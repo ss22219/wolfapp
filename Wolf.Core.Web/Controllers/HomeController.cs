@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -24,14 +25,21 @@ namespace Wolf.Core.Web.Controllers
             _messageBus = messageBus;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(int count = 1)
         {
-            _messageBus.PublishEvent(new TestEvent
+            Stopwatch stopwatch = new Stopwatch();
+            stopwatch.Start();
+            for (int i = 0; i < count; i++)
             {
-                Id = Guid.NewGuid(),
-                Timestamp = DateTimeOffset.Now
-            });
-            return Content(this.GetHashCode().ToString());
+
+                _messageBus.PublishEvent(new TestEvent
+                {
+                    Id = Guid.NewGuid(),
+                    Timestamp = DateTimeOffset.Now
+                });
+            }
+            stopwatch.Stop();
+            return Content(stopwatch.ElapsedMilliseconds.ToString());
         }
     }
 }
